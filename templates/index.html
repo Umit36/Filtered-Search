@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dosya Arama</title>
+</head>
+<style>
+   /* Genel Resetleme */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Sayfa Genel Stili */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #6e7dff, #667eea);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Konteyner */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+
+/* Kart Stili */
+.card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+/* Başlık */
+h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Alt Başlık */
+p {
+    color: #777;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+/* Form Stili */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Giriş Alanı ve Seçenekler */
+input[type="text"], select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    outline: none;
+}
+
+input[type="text"]:focus, select:focus {
+    border-color: #6e7dff;
+}
+
+/* Gönder Butonu */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #6e7dff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #4a59e2;
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Mobil uyum */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+}
+
+
+</style>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Dosya Arama Motoru</h1>
+            <p>İhtiyacınız olan dosyayı hızlıca bulun!</p>
+            <form action="/search" method="get">
+                <div class="form-group">
+                    <input type="text" name="query" placeholder="Dosya ismini girin..." required>
+                </div>
+                <div class="form-group">
+                    <select name="file_type">
+                        <option value="pdf">PDF</option>
+                        <option value="docx">DOCX</option>
+                        <option value="xlsx">XLSX</option>
+                    </select>
+                </div>
+                <button type="submit">Ara</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
